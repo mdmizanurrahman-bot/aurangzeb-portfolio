@@ -1,16 +1,19 @@
 [build]
   command = "npm run build"
-  functions = "netlify/functions"
-  publish = "dist"
+  functions = "functions"
+  publish = "build"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_VERSION = "9"
 
+# Environment variables for production
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
+# Headers for security and performance
 [[headers]]
   for = "/*"
   [headers.values]
